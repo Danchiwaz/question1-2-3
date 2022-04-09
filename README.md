@@ -1,4 +1,5 @@
-# question1-2-3
+# question 1-2-3
+# QUESTION 1
 ##### For any business to succeed in its day to day activities,there is always alot of data being shared in between organisational Departments or even outside the organisaition.
 ##### - This sets an alarm and bring about the issuee of encrypting data
 ##### -Encryption of data is always  applied in some important scenarios, such as login, payment and OAuth.Different scenarios require different signature encryption algorithms to achieve business goals.
@@ -109,7 +110,39 @@ if __name__ == '__main__':
 
 ```
 
-# The end.
-###### Am happy have shared some of the methods have used in data encryption, I understand there are other many more.
+#QUESTION 2
+#### The intergration protocals that I have come across and probably most used is **XML** and **json**
+###### This approach of **json** or **XML** has tons of advantages. These protocols are widely supported so that you can find a library, plugin, or extension for pretty much every application framework and platform. Consequently, it is easy to modify and integrate applications that support these protocols.
+###### Example ,I  django has a very good framework for developing restful Api's i.e django restframework, the output of this framework is json which is compatible with so many platforms and frameworks.
+1. ### Json
+###### JSON stands for JavaScript Object Notation
+###### JSON is a lightweight format for storing and transporting data
+###### JSON is often used when data is sent from a server to a web page
+#### JSON Syntax Rule:-
+* Data is in name/value pairs
+* Data is separated by commas
+* Curly braces hold objects
+* Square brackets hold arrays
+###### Though django restframework does it best and also for production but still its achievable in python 3.
+```python
+# converting data to json 
+# i will use dummy data just for simplicty 
+
+import json
+
+daniel_data ={
+    "name":"Daniel Maina Wachira",
+    "tel_number":"0712747209",
+    "area_of_residence":"Nairobi Kenya",
+    "intership_expected":"interIntel",
+    "profession":"Software Engineer"
+
+}
+
+convert_to_json = json.dumps(daniel_data)
+
+print(convert_to_json)
+```
+##### The output of the above code will be
 
 
