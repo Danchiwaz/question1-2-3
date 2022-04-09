@@ -35,6 +35,6 @@ def encrypt_aes(data, aes_key):
 if __name__ == '__main__':
     data_to_be_encrypted = "Hello,the one who is doing the server encription needs to be very careful and ensure all the security, protocals are observed"
     encrypting_key = "danielmainawachi"
-    encrypt_the_data = encrypt_aes(data_to_be_encrypted, encrypting_key))
+    encrypt_the_data = encrypt_aes(data_to_be_encrypted, encrypting_key)
     print(encrypt_the_data)
   
