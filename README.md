@@ -12,6 +12,11 @@
 ###### This oa abit different to  symmetric encryption algorithm, asymmetric encryption algorithm needs two keys: public key and private key. The public key and the private key are a pair. If the public key is used to encrypt the data, only the corresponding private key can be used to decrypt it; If the private key is used to encrypt the data, only the corresponding public key can be used to decrypt. Because encryption and decryption use two different keys, this algorithm is called asymmetric encryption algorithm. The common asymmetric algorithms are **RSA**, **DSA**, **ECC**.
 
 # Implementation of Python
-Inline-style: 
-![alt text](https://github.com/Danchiwaz/question1-2-3/blob/main/screenshots/hash_code.png "Hash algorithm")
+1. hash algorithm HMAC, MD5
+###### HMAC takes hmacsha1 as the column and needs HMAC_ The encrypted data is usually encoded in Base64 format.
+#####Python Code screenshot: 
+![alt text](https://github.com/Danchiwaz/question1-2-3/blob/main/screenshots/hash_code.png "HMAC algorithm")
+##### Output of encrypted data:
+![alt text](https://github.com/Danchiwaz/question1-2-3/blob/main/screenshots/hash_output.png "HMAC output")
+
 
