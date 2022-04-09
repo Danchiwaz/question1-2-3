@@ -20,6 +20,9 @@
 ![alt text](https://github.com/Danchiwaz/question1-2-3/blob/main/screenshots/hash_output.png "HMAC output")
 
 2. #### Symmetric encryption AES
+###### For symmetric encryption or asymmetric encryption, a third-party library needs to be installed. The password Library in Python is pycrypto, but it has stopped updating in 2012. Now pycryptodome is used to replace pycrypto.
+###### Here we need to install `pip install pycryptodome`
+
 ```python
 import json
 import base64
@@ -63,4 +66,5 @@ if __name__ == '__main__':
   
 
 ```
+###### The output should be `b'NvXwEIpr6HIh8RqdcRsfrO+Jh1PftKB6JtsFOnUa7PPlQR6f4k5EHCNlTFzXVPG8T39KVtHMYw7d\nJENzEoFWQDi9LmbQw+dUxIq8BBEr7s5XwDYALNSSHX3N924f6qo2bHxMrMS5jAorFd11f+nDPQ==\n'`
 
