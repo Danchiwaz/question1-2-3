@@ -20,7 +20,7 @@
 ##### Output of encrypted data:
 ![alt text](https://github.com/Danchiwaz/question1-2-3/blob/main/screenshots/hash_output.png "HMAC output")
 
-2. #### Symmetric encryption AES [Access the code on Github ](https://github.com/Danchiwaz/question1-2-3/blob/main/Question3/symetric/AES.py)
+2. #### Symmetric encryption AES [navigate to code ](https://github.com/Danchiwaz/question1-2-3/blob/main/Question3/symetric/AES.py)
 ###### For symmetric encryption or asymmetric encryption, a third-party library needs to be installed. The password Library in Python is pycrypto, but it has stopped updating in 2012. Now pycryptodome is used to replace pycrypto.
 ######  AES has five encryption modes, which are ECB, CBC, CTR, CFB and OFB. Take the ECB mode of AES as an example, AES also needs encryption key AES_ Key. It should be noted that if the encrypted data is less than 16 or 32 bits, it needs to be supplemented as a multiple of them. Take the multiple of 16 as an example:
 ###### Here we need to install `pip install pycryptodome`
@@ -70,7 +70,7 @@ if __name__ == '__main__':
 ```
 ###### The output should be `b'NvXwEIpr6HIh8RqdcRsfrO+Jh1PftKB6JtsFOnUa7PPlQR6f4k5EHCNlTFzXVPG8T39KVtHMYw7d\nJENzEoFWQDi9LmbQw+dUxIq8BBEr7s5XwDYALNSSHX3N924f6qo2bHxMrMS5jAorFd11f+nDPQ==\n'`
 
-3. #### Asymmetric encryption RSA [Access the code on Github ](https://github.com/Danchiwaz/question1-2-3/blob/main/Question3/asymetric/RSA.py)
+3. #### Asymmetric encryption RSA [Navigate to code ](https://github.com/Danchiwaz/question1-2-3/blob/main/Question3/asymetric/RSA.py)
 ###### This algorithm also needs pycryptodome to be installed
 ###### RSA encryption needs public key to encrypt. It should be noted that sometimes when the amount of data to be encrypted is large, it needs to be encrypted by segments.I will use segmented encryption. This encyption methodology is also much effective for less data.
 ###### Here we need to install `pip install pycryptodome`
@@ -124,6 +124,8 @@ if __name__ == '__main__':
 * Curly braces hold objects
 * Square brackets hold arrays
 ###### Though django restframework does it best and also for production but still its achievable in python 3.
+###### assuming I have a  Python object, I can convert it into a JSON string by using the `json.dumps()` method.
+[Navigate to code ](https://github.com/Danchiwaz/question1-2-3/blob/main/Question1/json_convert.py)
 ```python
 # converting data to json 
 # i will use dummy data just for simplicty 
@@ -144,5 +146,40 @@ convert_to_json = json.dumps(daniel_data)
 print(convert_to_json)
 ```
 ##### The output of the above code will be
+![alt text](https://github.com/Danchiwaz/question1-2-3/blob/main/screenshots/json_output.png "json output")
+
+2. ### xml
+###### XML is a software- and hardware-independent tool for storing and transporting data.
+- XML stands for eXtensible Markup Language
+- XML is a markup language much like HTML
+- XML was designed to store and transport data
+- XML was designed to be self-descriptive
+###### XML’s flexibility has many benefits. It lets you transfer data among corporate databases and Web sites without losing crucial descriptive information. It lets you automatically customize the presentation of data rather than display the same page to all comers. And it makes searches more efficient because search engines can sort through precise tags rather than long pages of text.
+###### Because XML brings sophisticated data coding to Web sites, it helps companies integrate their information flows. By creating a single set of XML tags for all corporate data, information can be shared seamlessly among Web sites, databases, and other back-end systems. But the revolutionary power of XML lies in supporting transactions between businesses. When a company sells a good or service to another company, a great deal of information needs to be exchanged—about prices, terms, specifications, delivery schedules, and so on. HTML’s one-size-fits-all nature makes such exchanges difficult, if not impossible, over the Internet. With XML, all the necessary information can be shared electronically, allowing complex deals to be closed without any human intervention. That’s why business-to-business Web markets, such as those run by Ariba and Commerce One, already rely on XML to automatically match buyers and sellers. In the not-too-distant future, your company may be judged by the content of its XML tags.
+###### Python has built functions to convert string,list etc to xml
+###### the most common function and can be accessed through import is `import xml.etree.ElementTree as ET`
+### Python 3 implementstion of XML
+```python
+# i will use a list to demonstrate the implementaton of xml 
+import xml.etree.ElementTree as ET
+
+EMPLOYEE_LIST = ['Samson Maina', 'Daniel Wachira Maina','Purity Wanjiku','Mary Odhiambo','Dennis Waweru']
+
+def generate_xml():
+    empl_config = ET.Element("empl_config")
+    empl_config = ET.SubElement(empl_config, 'empl_config')
+
+    for employee in range(len(EMPLOYEE_LIST)):
+        emp = ET.SubElement(empl_config,"emp")
+        emp.text = str(EMPLOYEE_LIST[employee])
+
+    tree = ET.ElementTree(empl_config)
+    tree.write("employee.xml", encoding="utf-8", xml_declaration=True)
+
+generate_xml()
+
+```
+#### The out of the code will be 
+![alt text](https://github.com/Danchiwaz/question1-2-3/blob/main/screenshots/xml_output.png "xml output")
 
 
