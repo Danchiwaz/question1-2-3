@@ -21,6 +21,7 @@
 
 2. #### Symmetric encryption AES
 ###### For symmetric encryption or asymmetric encryption, a third-party library needs to be installed. The password Library in Python is pycrypto, but it has stopped updating in 2012. Now pycryptodome is used to replace pycrypto.
+######  AES has five encryption modes, which are ECB, CBC, CTR, CFB and OFB. Take the ECB mode of AES as an example, AES also needs encryption key AES_ Key. It should be noted that if the encrypted data is less than 16 or 32 bits, it needs to be supplemented as a multiple of them. Take the multiple of 16 as an example:
 ###### Here we need to install `pip install pycryptodome`
 
 ```python
@@ -67,4 +68,48 @@ if __name__ == '__main__':
 
 ```
 ###### The output should be `b'NvXwEIpr6HIh8RqdcRsfrO+Jh1PftKB6JtsFOnUa7PPlQR6f4k5EHCNlTFzXVPG8T39KVtHMYw7d\nJENzEoFWQDi9LmbQw+dUxIq8BBEr7s5XwDYALNSSHX3N924f6qo2bHxMrMS5jAorFd11f+nDPQ==\n'`
+
+3. #### Asymmetric encryption RSA
+###### This algorithm also needs pycryptodome to be installed
+###### RSA encryption needs public key to encrypt. It should be noted that sometimes when the amount of data to be encrypted is large, it needs to be encrypted by segments.I will use segmented encryption. This encyption methodology is also much effective for less data.
+###### Here we need to install `pip install pycryptodome`
+##### The python code for RSA is a follows
+```python
+from Crypto.Cipher import PKCS1_v1_5
+from Crypto.PublicKey import RSA
+import base64
+
+def cipher(data, rsa_key):
+    """
+    Public key encryption
+    : param MSG: to encrypt content
+    : Return: encrypted ciphertext
+    """
+    #Get public key
+    key = rsa_key
+    publickey = RSA.importKey(key)
+    #Segmented encryption
+    pk = PKCS1_v1_5.new(publickey)
+    encrypt_text = []
+    #Segment encryption of data
+    for i in range(0, len(data), 100):
+        cont = data[i:i + 100]
+        encrypt_text.append(pk.encrypt(cont.encode("utf-8")))
+    #Segmented encryption
+    cipher_text = b''.join(encrypt_text)
+    #Base64
+    result = base64.b64encode(cipher_text)
+    return result.decode()
+
+if __name__ == '__main__':
+    Data = "Walkman AI focuses on the game field, has accumulated AI technology for many years, and provides one-stop audit of text, picture, audio / video content, game AI and data platform services."
+    #Read the file where the public key is stored to get the public key
+    rsa_key = open('publickey.pem').read()
+    cipher(Data, rsa_key)
+
+```
+
+# The end.
+###### Am happy have shared some of the methods have used in data encryption, I understand there are other many more.
+
 
