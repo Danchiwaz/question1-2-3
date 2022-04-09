@@ -18,7 +18,7 @@ def cipher(data, rsa_key):
     for i in range(0, len(data), 100):
         cont = data[i:i + 100]
         encrypt_text.append(pk.encrypt(cont.encode("utf-8")))
-    #Segmented encryption完进行拼接
+    #Segmented encryption
     cipher_text = b''.join(encrypt_text)
     #Base64
     result = base64.b64encode(cipher_text)
