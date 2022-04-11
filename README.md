@@ -1,5 +1,110 @@
 # question 1-2-3
 # QUESTION 1
+#### The intergration protocals that I have come across and probably most used is **XML** and **json**
+###### This approach of **json** or **XML** has tons of advantages. These protocols are widely supported so that you can find a library, plugin, or extension for pretty much every application framework and platform. Consequently, it is easy to modify and integrate applications that support these protocols.
+###### Example ,I  django has a very good framework for developing restful Api's i.e django restframework, the output of this framework is json which is compatible with so many platforms and frameworks.
+1. ### Json
+###### JSON stands for JavaScript Object Notation
+###### JSON is a lightweight format for storing and transporting data
+###### JSON is often used when data is sent from a server to a web page
+#### JSON Syntax Rule:-
+* Data is in name/value pairs
+* Data is separated by commas
+* Curly braces hold objects
+* Square brackets hold arrays
+###### Though django restframework does it best and also for production but still its achievable in python 3.
+###### assuming I have a  Python object, I can convert it into a JSON string by using the `json.dumps()` method.
+[Navigate to code ](https://github.com/Danchiwaz/question1-2-3/blob/main/Question1/json_convert.py)
+```python
+# converting data to json 
+# i will use dummy data just for simplicty 
+
+import json
+
+daniel_data ={
+    "name":"Daniel Maina Wachira",
+    "tel_number":"0712747209",
+    "area_of_residence":"Nairobi Kenya",
+    "intership_expected":"interIntel",
+    "profession":"Software Engineer"
+
+}
+
+convert_to_json = json.dumps(daniel_data)
+
+print(convert_to_json)
+```
+##### The output of the above code will be
+![alt text](https://github.com/Danchiwaz/question1-2-3/blob/main/screenshots/json_output.png "json output")
+
+2. ### xml
+###### XML is a software- and hardware-independent tool for storing and transporting data.
+- XML stands for eXtensible Markup Language
+- XML is a markup language much like HTML
+- XML was designed to store and transport data
+- XML was designed to be self-descriptive
+###### XML’s flexibility has many benefits. It lets you transfer data among corporate databases and Web sites without losing crucial descriptive information. It lets you automatically customize the presentation of data rather than display the same page to all comers. And it makes searches more efficient because search engines can sort through precise tags rather than long pages of text.
+###### Because XML brings sophisticated data coding to Web sites, it helps companies integrate their information flows. By creating a single set of XML tags for all corporate data, information can be shared seamlessly among Web sites, databases, and other back-end systems. But the revolutionary power of XML lies in supporting transactions between businesses. When a company sells a good or service to another company, a great deal of information needs to be exchanged—about prices, terms, specifications, delivery schedules, and so on. HTML’s one-size-fits-all nature makes such exchanges difficult, if not impossible, over the Internet. With XML, all the necessary information can be shared electronically, allowing complex deals to be closed without any human intervention. That’s why business-to-business Web markets, such as those run by Ariba and Commerce One, already rely on XML to automatically match buyers and sellers. In the not-too-distant future, your company may be judged by the content of its XML tags.
+###### Python has built functions to convert string,list etc to xml
+###### the most common function and can be accessed through import is `import xml.etree.ElementTree as ET`
+### Python 3 implementstion of XML
+```python
+# i will use a list to demonstrate the implementaton of xml 
+import xml.etree.ElementTree as ET
+
+EMPLOYEE_LIST = ['Samson Maina', 'Daniel Wachira Maina','Purity Wanjiku','Mary Odhiambo','Dennis Waweru']
+
+def generate_xml():
+    empl_config = ET.Element("empl_config")
+    empl_config = ET.SubElement(empl_config, 'empl_config')
+
+    for employee in range(len(EMPLOYEE_LIST)):
+        emp = ET.SubElement(empl_config,"emp")
+        emp.text = str(EMPLOYEE_LIST[employee])
+
+    tree = ET.ElementTree(empl_config)
+    tree.write("employee.xml", encoding="utf-8", xml_declaration=True)
+
+generate_xml()
+
+```
+#### The out of the code will be 
+![alt text](https://github.com/Danchiwaz/question1-2-3/blob/main/screenshots/xml_output.png "xml output")
+
+#QUESTION 2
+###### For this question ,Am not so much conversant with the technologies that are used here,Having an internship in your company will offer me an amazing and an awesome experiencing especially learning from other data Engineers.Allow me to share on how I can handle the situation.
+
+###### I will need to  set of tools to collect, prepare, and process real-time streaming
+data than those tools that  have been traditionally used for batch analytics. With traditional
+analytics, we gather the data, load it periodically into a database, and analyze it hours,
+days, or weeks later. For me to Analyze real-time data will require a different approach.According to my own understanding, Stream
+processing applications process data continuously in real-time, even before it is stored.
+Streaming data can come in at a blistering pace and data volumes can vary up and
+down at any time. Stream data processing platforms have to be able to handle the
+speed and variability of incoming data and process it as it arrives, often millions to
+hundreds of millions of notifications per hour.
+### The technologies i Will use.
+#### Amazon Kinesis Data Streams
+- Amazon Kinesis Data Streams
+###### Amazon Kinesis Data Streams enables you to build custom, real-time applications using
+popular stream processing frameworks and load streaming data into many different data
+stores. A Kinesis stream can be configured to continuously receive events from
+hundreds of thousands of data producers delivered from sources like website clickstreams, IoT sensors, social media feeds and application logs. Within milliseconds, data
+is available to be read and processed by your application.
+When implementing a solution with Kinesis Data Streams, you create custom dataprocessing applications known as Kinesis Data Streams applications. A typical Kinesis
+Data Streams application reads data from a Kinesis stream as data records.
+Data put into Kinesis Data Streams is ensured to be highly available and elastic, and is
+available in milliseconds. You can continuously add various types of data such as
+clickstreams, application logs, and social media to a Kinesis stream from hundreds of
+thousands of sources. Within seconds, the data will be available for your Kinesis
+Applications to read and process from the stream.
+![alt text](https://github.com/Danchiwaz/question1-2-3/blob/main/screenshots/data.png "xml output")
+
+
+
+
+
+# QUESTION 3
 ##### For any business to succeed in its day to day activities,there is always alot of data being shared in between organisational Departments or even outside the organisaition.
 ##### - This sets an alarm and bring about the issuee of encrypting data
 ##### -Encryption of data is always  applied in some important scenarios, such as login, payment and OAuth.Different scenarios require different signature encryption algorithms to achieve business goals.
@@ -109,77 +214,4 @@ if __name__ == '__main__':
     cipher(Data, rsa_key)
 
 ```
-
-# QUESTION 2
-#### The intergration protocals that I have come across and probably most used is **XML** and **json**
-###### This approach of **json** or **XML** has tons of advantages. These protocols are widely supported so that you can find a library, plugin, or extension for pretty much every application framework and platform. Consequently, it is easy to modify and integrate applications that support these protocols.
-###### Example ,I  django has a very good framework for developing restful Api's i.e django restframework, the output of this framework is json which is compatible with so many platforms and frameworks.
-1. ### Json
-###### JSON stands for JavaScript Object Notation
-###### JSON is a lightweight format for storing and transporting data
-###### JSON is often used when data is sent from a server to a web page
-#### JSON Syntax Rule:-
-* Data is in name/value pairs
-* Data is separated by commas
-* Curly braces hold objects
-* Square brackets hold arrays
-###### Though django restframework does it best and also for production but still its achievable in python 3.
-###### assuming I have a  Python object, I can convert it into a JSON string by using the `json.dumps()` method.
-[Navigate to code ](https://github.com/Danchiwaz/question1-2-3/blob/main/Question1/json_convert.py)
-```python
-# converting data to json 
-# i will use dummy data just for simplicty 
-
-import json
-
-daniel_data ={
-    "name":"Daniel Maina Wachira",
-    "tel_number":"0712747209",
-    "area_of_residence":"Nairobi Kenya",
-    "intership_expected":"interIntel",
-    "profession":"Software Engineer"
-
-}
-
-convert_to_json = json.dumps(daniel_data)
-
-print(convert_to_json)
-```
-##### The output of the above code will be
-![alt text](https://github.com/Danchiwaz/question1-2-3/blob/main/screenshots/json_output.png "json output")
-
-2. ### xml
-###### XML is a software- and hardware-independent tool for storing and transporting data.
-- XML stands for eXtensible Markup Language
-- XML is a markup language much like HTML
-- XML was designed to store and transport data
-- XML was designed to be self-descriptive
-###### XML’s flexibility has many benefits. It lets you transfer data among corporate databases and Web sites without losing crucial descriptive information. It lets you automatically customize the presentation of data rather than display the same page to all comers. And it makes searches more efficient because search engines can sort through precise tags rather than long pages of text.
-###### Because XML brings sophisticated data coding to Web sites, it helps companies integrate their information flows. By creating a single set of XML tags for all corporate data, information can be shared seamlessly among Web sites, databases, and other back-end systems. But the revolutionary power of XML lies in supporting transactions between businesses. When a company sells a good or service to another company, a great deal of information needs to be exchanged—about prices, terms, specifications, delivery schedules, and so on. HTML’s one-size-fits-all nature makes such exchanges difficult, if not impossible, over the Internet. With XML, all the necessary information can be shared electronically, allowing complex deals to be closed without any human intervention. That’s why business-to-business Web markets, such as those run by Ariba and Commerce One, already rely on XML to automatically match buyers and sellers. In the not-too-distant future, your company may be judged by the content of its XML tags.
-###### Python has built functions to convert string,list etc to xml
-###### the most common function and can be accessed through import is `import xml.etree.ElementTree as ET`
-### Python 3 implementstion of XML
-```python
-# i will use a list to demonstrate the implementaton of xml 
-import xml.etree.ElementTree as ET
-
-EMPLOYEE_LIST = ['Samson Maina', 'Daniel Wachira Maina','Purity Wanjiku','Mary Odhiambo','Dennis Waweru']
-
-def generate_xml():
-    empl_config = ET.Element("empl_config")
-    empl_config = ET.SubElement(empl_config, 'empl_config')
-
-    for employee in range(len(EMPLOYEE_LIST)):
-        emp = ET.SubElement(empl_config,"emp")
-        emp.text = str(EMPLOYEE_LIST[employee])
-
-    tree = ET.ElementTree(empl_config)
-    tree.write("employee.xml", encoding="utf-8", xml_declaration=True)
-
-generate_xml()
-
-```
-#### The out of the code will be 
-![alt text](https://github.com/Danchiwaz/question1-2-3/blob/main/screenshots/xml_output.png "xml output")
-
 
