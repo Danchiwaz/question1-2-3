@@ -74,30 +74,14 @@ generate_xml()
 #QUESTION 2
 ###### For this question ,Am not so much conversant with the technologies that are used here,Having an internship in your company will offer me an amazing and an awesome experiencing especially learning from other data Engineers.Allow me to share on how I can handle the situation.
 
-###### I will need to  set of tools to collect, prepare, and process real-time streaming
-data than those tools that  have been traditionally used for batch analytics. With traditional
-analytics, we gather the data, load it periodically into a database, and analyze it hours,
-days, or weeks later. For me to Analyze real-time data will require a different approach.According to my own understanding, Stream
-processing applications process data continuously in real-time, even before it is stored.
-Streaming data can come in at a blistering pace and data volumes can vary up and
-down at any time. Stream data processing platforms have to be able to handle the
-speed and variability of incoming data and process it as it arrives, often millions to
-hundreds of millions of notifications per hour.
+###### I will need to  set of tools to collect, prepare, and process real-time streaming data than those tools that  have been traditionally used for batch analytics. With traditional analytics, we gather the data, load it periodically into a database, and analyze it hours, days, or weeks later. For me to Analyze real-time data will require a different approach.According to my own understanding, Stream processing applications process data continuously in real-time, even before it is stored. Streaming data can come in at a blistering pace and data volumes can vary up and down at any time. Stream data processing platforms have to be able to handle the speed and variability of incoming data and process it as it arrives, often millions to hundreds of millions of notifications per hour.
 ### The technologies i Will use.
 #### Amazon Kinesis Data Streams
-- Amazon Kinesis Data Streams
 ###### Amazon Kinesis Data Streams enables you to build custom, real-time applications using
 popular stream processing frameworks and load streaming data into many different data
 stores. A Kinesis stream can be configured to continuously receive events from
-hundreds of thousands of data producers delivered from sources like website clickstreams, IoT sensors, social media feeds and application logs. Within milliseconds, data
-is available to be read and processed by your application.
-When implementing a solution with Kinesis Data Streams, you create custom dataprocessing applications known as Kinesis Data Streams applications. A typical Kinesis
-Data Streams application reads data from a Kinesis stream as data records.
-Data put into Kinesis Data Streams is ensured to be highly available and elastic, and is
-available in milliseconds. You can continuously add various types of data such as
-clickstreams, application logs, and social media to a Kinesis stream from hundreds of
-thousands of sources. Within seconds, the data will be available for your Kinesis
-Applications to read and process from the stream.
+hundreds of thousands of data producers delivered from sources like website clickstreams, IoT sensors, social media feeds and application logs. Within milliseconds, data is available to be read and processed by your application.When implementing a solution with Kinesis Data Streams, you create custom dataprocessing applications known as Kinesis Data Streams applications. A typical KinesisData Streams application reads data from a Kinesis stream as data records.
+Data put into Kinesis Data Streams is ensured to be highly available and elastic, and is available in milliseconds. You can continuously add various types of data such as clickstreams, application logs, and social media to a Kinesis stream from hundreds of thousands of sources. Within seconds, the data will be available for your Kinesis Applications to read and process from the stream.
 ![alt text](https://github.com/Danchiwaz/question1-2-3/blob/main/screenshots/data.png "xml output")
 
 
